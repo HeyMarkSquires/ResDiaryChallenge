@@ -91,7 +91,7 @@ namespace ResDiary.Test
         }
 
         /// <summary>
-        /// Invalid split given with 0
+        /// Invalid split given with 0. Should return empty array.
         /// </summary>
         [TestMethod]
         public void TestMethod5()
@@ -103,7 +103,7 @@ namespace ResDiary.Test
         }
 
         /// <summary>
-        /// Invalid split given with -1
+        /// Invalid split given with -1. Should return empty array.
         /// </summary>
         [TestMethod]
         public void TestMethod6()
@@ -112,6 +112,18 @@ namespace ResDiary.Test
             List<List<int>> goal = new List<List<int>>();
 
             Assert.IsTrue(Compare(ResDiaryClass.GroupArrayElements(array, 0), goal));
+        }
+
+        /// <summary>
+        /// Invalid split given with empty array. Should just return an empty array.
+        /// </summary>
+        [TestMethod]
+        public void TestMethod7()
+        {
+            List<int> array = new List<int>();
+            List<List<int>> goal = new List<List<int>>();
+
+            Assert.IsTrue(Compare(ResDiaryClass.GroupArrayElements(array, 3), goal));
         }
     }
 }

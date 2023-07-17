@@ -20,7 +20,7 @@ namespace ResDiary
         {
             List<List<int>> result = new List<List<int>>();
             //Prevents the code from splitting it into impossible chunks
-            if (split > 0)
+            if (split > 0 || array.Count == 0)
             {
                 //Find the max size of our various chunks
                 double size = Math.Ceiling((double)array.Count / split);
